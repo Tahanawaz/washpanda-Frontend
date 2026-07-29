@@ -1,4 +1,5 @@
 import ContactForm from "./ContactForm";
+import { withPublicBase } from "../../utils/publicPath";
 
 export default function Contact() {
   return (
@@ -11,7 +12,7 @@ export default function Contact() {
         <div className="grid items-stretch gap-8 md:grid-cols-2 lg:gap-12">
           <div className="min-h-[360px] overflow-hidden rounded-lg">
             <img
-              src="/contact-panda.png"
+              src={withPublicBase("/contact-panda.png")}
               alt="Wash Panda customer support"
               loading="lazy"
               decoding="async"

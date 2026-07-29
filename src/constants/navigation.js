@@ -1,7 +1,9 @@
+import { withPublicBase } from "../utils/publicPath";
+
 export const navigation = [
-  { name: "HOME", path: "/" },
-  { name: "BOOKING", path: "/booking" },
-  { name: "ABOUT", path: "/#about" },
-  { name: "GALLERY", path: "/#gallery" },
-  { name: "CONTACT", path: "/#contact" },
+  { name: "HOME", path: withPublicBase("/") },
+  { name: "BOOKING", path: withPublicBase("/booking") },
+  { name: "ABOUT", path: withPublicBase("/#about") },
+  { name: "GALLERY", path: withPublicBase("/#gallery") },
+  { name: "CONTACT", path: withPublicBase("/#contact") },
 ];

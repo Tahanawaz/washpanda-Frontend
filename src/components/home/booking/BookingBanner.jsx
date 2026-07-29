@@ -1,9 +1,11 @@
+import { withPublicBase } from "../../../utils/publicPath";
+
 export default function BookingBanner() {
   return (
     <section
       className="relative -mt-10 min-h-[120px] w-full overflow-hidden sm:min-h-[100px]"
       style={{
-        backgroundImage: "url('/booking-banner.png')",
+        backgroundImage: `url('${withPublicBase("/booking-banner.png")}')`,
         backgroundSize: "cover",
         backgroundPosition: "center top ",
       }}
@@ -19,7 +21,7 @@ export default function BookingBanner() {
         </h2>
 
         {/* Right Button */}
-        <a href="/booking" className="rounded-md bg-white px-8 py-3 font-semibold text-[#4A9EFF] transition-all duration-300 hover:scale-105 hover:bg-[#4A9EFF] hover:text-white">
+        <a href={withPublicBase("/booking")} className="rounded-md bg-white px-8 py-3 font-semibold text-[#4A9EFF] transition-all duration-300 hover:scale-105 hover:bg-[#4A9EFF] hover:text-white">
           Book Now
         </a>
       </div>

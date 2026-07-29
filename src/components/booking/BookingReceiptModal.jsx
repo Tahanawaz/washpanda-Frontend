@@ -1,5 +1,6 @@
 import { FaCheck } from "react-icons/fa6";
 import { LuCreditCard, LuDownload, LuHouse, LuX } from "react-icons/lu";
+import { withPublicBase } from "../../utils/publicPath";
 
 export default function BookingReceiptModal({ booking, settings, onClose, onHome }) {
   if (!booking) return null;
@@ -18,7 +19,7 @@ export default function BookingReceiptModal({ booking, settings, onClose, onHome
         </div>
 
         <div className="p-5 sm:p-8">
-          <div className="flex items-center justify-between border-b border-dashed border-gray-200 pb-5"><div><img src="/logo.png" alt="WashPanda" className="h-14 w-24 object-contain" /><p className="mt-1 text-xs text-gray-400">{settings?.address}</p></div><div className="text-right"><p className="text-xs font-bold uppercase tracking-wide text-gray-400">Receipt total</p><p className="mt-1 text-2xl font-extrabold text-[#1f6faa]">{booking.totalAmount.toLocaleString("en-PK")} <span className="text-sm">{settings?.currency || "PKR"}</span></p></div></div>
+          <div className="flex items-center justify-between border-b border-dashed border-gray-200 pb-5"><div><img src={withPublicBase("/logo.png")} alt="WashPanda" className="h-14 w-24 object-contain" /><p className="mt-1 text-xs text-gray-400">{settings?.address}</p></div><div className="text-right"><p className="text-xs font-bold uppercase tracking-wide text-gray-400">Receipt total</p><p className="mt-1 text-2xl font-extrabold text-[#1f6faa]">{booking.totalAmount.toLocaleString("en-PK")} <span className="text-sm">{settings?.currency || "PKR"}</span></p></div></div>
 
           <div className="grid gap-5 py-5 text-sm sm:grid-cols-2">
             <ReceiptGroup title="Customer"><ReceiptRow label="Name" value={booking.customer.fullName} /><ReceiptRow label="Phone" value={booking.customer.phone} /><ReceiptRow label="Email" value={booking.customer.email} /></ReceiptGroup>

@@ -12,6 +12,7 @@ import {
   LuX,
 } from "react-icons/lu";
 import { logoutAdmin } from "../../../services/api";
+import { withPublicBase } from "../../../utils/publicPath";
 
 const links = [
   { label: "Dashboard", to: "/dashboard", icon: LuLayoutDashboard, end: true },
@@ -37,8 +38,8 @@ export default function Sidebar({ mobile = false, onClose }) {
   return (
     <aside className={`${mobile ? "flex h-[100dvh] w-[280px]" : "hidden h-screen w-[240px] lg:flex xl:w-[260px]"} relative shrink-0 flex-col overflow-hidden border-r border-slate-100 bg-white px-4 py-3 xl:px-5`}>
       {mobile && <button type="button" onClick={onClose} aria-label="Close dashboard menu" className="absolute right-4 top-4 rounded-xl bg-gray-100 p-2 text-gray-500"><LuX size={20} /></button>}
-      <a href="/" className="mb-3 flex shrink-0 justify-center" aria-label="Wash Panda home">
-        <img src="/logo.png" alt="Wash Panda" className="h-20 w-24 object-contain" />
+      <a href={withPublicBase("/")} className="mb-3 flex shrink-0 justify-center" aria-label="Wash Panda home">
+        <img src={withPublicBase("/logo.png")} alt="Wash Panda" className="h-20 w-24 object-contain" />
       </a>
 
       <p className="mb-2 shrink-0 px-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Management</p>
